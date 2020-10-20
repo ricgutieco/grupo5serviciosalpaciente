@@ -1,4 +1,3 @@
-import configparser as configparser
 from flask import Flask, Response, json
 from database.db import initialize_db
 from flask_restful import Api
