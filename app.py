@@ -3,12 +3,12 @@ from flask import Flask, Response, json
 from database.db import initialize_db
 from flask_restful import Api
 from resources.routes import initialize_routes
-import ConfigParser
+from configparser import ConfigParser
 
 app = Flask(__name__)
 api = Api(app)
 
-config = configparser.ConfigParser()
+config = ConfigParser()
 config.read('config.properties')
 app.config['MONGODB_SETTINGS'] = {
     'host': config.get(section='database_config', option='host') + config.get(section='database_config', option='database')
